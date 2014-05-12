@@ -15,7 +15,7 @@ $guess = fgets(STDIN);
 
 //Tell user high, lower, or they were right
 
-while ($guess != $random){
+while ($guess != $random && $number_of_guesses <= 7){
 	if($guess < $random) {
 		echo "HIGHER-->\n";
 		$guess = fgets(STDIN);	
@@ -25,7 +25,14 @@ while ($guess != $random){
 		$guess = fgets(STDIN);
 
 	}
+
 	$number_of_guesses++;
+
+if ($number_of_guesses ==7){
+	echo "Too many guesses, you lose.\n";
+exit(0);	
+}	
 }		
 echo "You guessed right in $number_of_guesses guesses!\n"; 
+
 
