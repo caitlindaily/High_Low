@@ -1,7 +1,10 @@
 <?php
 
 //Computer needs to make random number
-$random = rand(1, 100);
+$random = mt_rand(1, 100);
+
+//Have a counter of how many guesses
+$number_of_guesses = 1;
 
 
 //Have computer ask for number
@@ -22,6 +25,7 @@ while ($guess != $random){
 		$guess = fgets(STDIN);
 
 	}
+	$number_of_guesses++;
 }		
-echo "You guessed right!\n"; 
+echo "You guessed right in $number_of_guesses guesses!\n"; 
 
